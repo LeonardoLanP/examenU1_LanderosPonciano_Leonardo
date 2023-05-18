@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Brawl Stars</title>
+   <link rel="stylesheet" href="style.css" />
+   <script>
+        function cambiarFondo() {
+            var randomImage = getRandomImage();
+            document.body.style.backgroundImage = "url('" + randomImage + "')";
+        }
+        function getRandomImage() {
+            var imagenes = ['GIF/Brawl2.jpg','GIF/Brawl4.jpg', 'GIF/Brawl5.jpg', 'GIF/Brawl6.jpg'];
+            var randomIndex = Math.floor(Math.random() * imagenes.length);
+            return imagenes[randomIndex];
+        }
+
+        function cambiarTexto() {
+            document.getElementById("texto").innerHTML = "El rey de Parangaricutirimícuaro se quiere desparangaricutirimicuarizar, el que lo desparangaricutirimicuarize un buen desparangaricutirimicuarizador será.";
+        }
+
+        function holaM() {
+            document.getElementById("HolaM").innerHTML = "<h2>Hola Mundo</h2>";
+        }
+
+        function cambiarimgs() {
+            document.getElementById("img1").src = "GIF/Perro.jpg";
+            document.getElementById("img2").src = "GIF/Perros.jpg";
+            document.getElementById("img3").src = "GIF/PerroSaltando.jpg";
+        }
+        function restablecer() {
+            document.getElementById("img1").src = "GIF/Brawl1.jpg";
+            document.getElementById("img2").src = "GIF/Supercel.png";
+            document.getElementById("img3").src = "GIF/Brawl3.jpg";
+        }
+        function escribirTexto() {
+            var miDiv = document.getElementById('miDiv');
+            miDiv.innerHTML = '<h1>Este texto no lo escribió Leonardo, lo escribió JavaScript</h1>';
+        }
+
+    </script>
+</head>
+<body background="GIF/Brawl2.jpg">
+    <header>
+        <div id="miDiv"></div>
+            <p>
+            <img src="GIF/Poco.gif" class = "pin"/>
+            Brawl Stars
+            <img src="GIF/Fang.gif" class = "pin2"/>
+            </p>
+            <button onclick="cambiarFondo()">Cambiar Imagen de Fondo</button>
+            <button onclick="cambiarTexto()">Texto Random</button>
+            <button onclick="cambiarimgs()">Cambiar Imagenes</button>
+            <button onclick="restablecer()">Restablecer imagenes</button>
+            <button onclick="holaM()">Mensaje.....</button>
+            <button onclick="escribirTexto()">JavaScript</button>
+    </header>
+
+    <section>
+<article class="fondo">
+    <div class="public">
+        <h2 id="HolaM"></h2>
+    <img src="GIF/Brawl1.jpg" class="imagenes" id="img1"/>
+    <h3><string>Fecha de Salida</string></h3>
+    <h5>12 Diciembre 2018</h5>
+<p class="text" id="texto">La versión beta del juego fue lanzada el 14 de junio de 2017 solo para Canadá, Australia y Nueva Zelanda
+     con temáticas simples y mecánicas difíciles, mientras que la versión global
+     se lanzó agregando un apartado visual con mayor detalles interesantes y diferentes funcionalidades,
+     que se agregaron el 12 de diciembre de 2018.</p>
+     </div>
+</article>
+
+<article class="fondo">
+   <div class="creador"> 
+    <img src="GIF/Supercel.png" class="imagenes" id="img2"/>
+    <h3><strong>Creador</strong></h3>
+    <h5>Supercel</h5>
+<p class="text">La compañía se fundó en 2010 con capital aportado por los propietarios y préstamos del gobierno finlandés.
+     Al principio planeaba desarrollar juegos para múltiples plataformas web, pero en 2011, 
+     tras haber publicado Gunshine, abandonó la estrategia inicial y se concentró en juegos para tabletas y dispositivos móviles. 
+     Tras crear varios juegos que no pasaron de la fase beta, Supercell publicó en 2012 Hay Day y Clash of Clans. 
+     Este último llegó a ser el juego con mayores ingresos en Estados Unidos, a los tres meses de su lanzamiento.
+     El 14 de junio de 2017 se anunció Brawl Stars y al día siguiente, 15 de junio, salió en la App Store, en exclusiva para iOS. 
+     Más de un año después, el 26 de junio de 2018, el juego salió también en Android, con un soft launch para Canadá. De esta forma,
+     el lanzamiento global del juego.
+</p>
+</div>
+</article>
+
+<article class="fondo">
+    <div class="reseña">
+        <img src="GIF/Brawl3.jpg" class="imagenes" id="img3"/>
+    <h3><strong>Reseña</strong></h3>
+    <p class="text">Actualmente llevo jugando desde el 16 de Enero del 2019, cada vez da un salto de calidad en sus actualizaciones
+        Siendo que anterior mente no eran la gran cosa, ha llamado la atención y atraido a millones de jugares
+        sacando contenido nuevo e interesante, por lo que le doy un:
+    </p>
+    <p><strong>8.5/10</strong></p>
+    </div>
+    </article>
+    </section>
+
+    <article class="fondo">
+        <div class="creador"> 
+            <img src="GIF/Collette2.gif" height="200px" id="pin3"/>
+            <br>
+            <a href="https://play.google.com/store/apps/details?id=com.supercell.brawlstars&hl=es&gl=US">Descarga Ahora</a>
+        </div>
+     </article>
+</body>
+</html>
