@@ -3,6 +3,7 @@
 <head>
    <title>Brawl Stars</title>
    <link rel="stylesheet" href="style.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script>
         function cambiarFondo() {
             var randomImage = getRandomImage();
@@ -37,6 +38,19 @@
             miDiv.innerHTML = '<h1>Este texto no lo escribió Leonardo, lo escribió JavaScript</h1>';
         }
 
+        var img = ['GIF/Brawl1.jpg','GIF/Brawl2.jpg','GIF/Brawl3.jpg','GIF/Brawl4.jpg','GIF/Brawl5.jpg','GIF/Brawl6.jpg'];
+        var posicion = 0; 
+
+        function cambiarImg(direction) {
+            if (direction === 'sig') {
+                posicion = (posicion + 1) % img.length; 
+            } else {
+                posicion = (posicion - 1 + img.length) % img.length; 
+            }
+
+            var elemento = document.getElementById('img1');
+            elemento.src = img[posicion]; 
+        }
     </script>
 </head>
 <body background="GIF/Brawl2.jpg">
@@ -59,6 +73,9 @@
 <article class="fondo">
     <div class="public">
         <h2 id="HolaM"></h2>
+        <button onclick="cambiarImg('anter')">Anterior</button>
+        <button onclick="cambiarImg('sig')">Siguiente</button>
+        <br>
     <img src="GIF/Brawl1.jpg" class="imagenes" id="img1"/>
     <h3><string>Fecha de Salida</string></h3>
     <h5>12 Diciembre 2018</h5>
