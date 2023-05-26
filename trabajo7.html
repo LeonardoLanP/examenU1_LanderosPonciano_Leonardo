@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "mensaje">Formulario de Registro de Persona</h1>
+    <form action="registro.html" method="get" id="registroForm">
+        <label>Nombre:</label>
+        <input type="text" name="nombre"><br>
+
+        <label>Apellidos:</label>
+        <input type="text" name ="apellido"><br>
+
+        <label>Correo:</label>
+        <input type="email" name="correo"><br>
+
+        <label>Fecha Nacimiento:</label>
+        <input type="date"name="fechanac"><br>
+
+        <label>Telefono:</label>
+        <input type="tel" name="telefono"><br>
+
+        <label>Usuario:</label>
+        <input type="text" name="ususario"><br>
+
+        <label>Contraseña:</label>
+        <input type="password" name="contrasena"><br>
+
+        <label>Repetir Contraseña:</label>
+        <input type="password" name="cepcontrasena"><br>
+
+  <input type="submit" value="Registrar persona">
+    </form>
+        <script>
+        getParameter = (key) =>{
+        address = window.location.search;
+        parameterList = new URLSearchParams(address);
+        return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+        var nombre = getParameter("nombre");
+        if(nombre != null){ 
+            document.getElementById("Nombre").innerHTML = nombre;
+        }
+        console.log(getParameter("apellido"));
+        var apellido = getParameter("apellido");
+        if(apellido != null){ 
+            document.getElementById("Apellido").innerHTML = apellido;
+        }
+
+        console.log(getParameter("correo"));
+        var correo = getParameter("correo");
+        if(correo != null){ 
+            document.getElementById("Correo").href = "mailto:"+correo;
+        }
+
+        console.log(getParameter("telefono"));
+        var telefono = getParameter("telefono");
+        if(telefono != null){ 
+            document.getElementById("Telefono").href = "tel:"+correo;
+        }
+
+        console.log(getParameter("fechanac"));
+        var FechaDeNacimiento = getParameter("fechanac");
+      if (FechaDeNacimiento != null){
+                var fechaNacimiento = FechaDeNacimiento;
+                var fechaActual = new Date();
+                var fechaNac = new Date(fechaNacimiento);
+                var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+                if (fechaActual.getMonth() < fechaNac.getMonth() || (fechaActual.getMonth() === fechaNac.getMonth() && fechaActual.getDate() < fechaNac.getDate())) {
+                    edad--;
+                }
+                if (edad <= 99){
+                document.getElementById("Fechanac").innerHTML = "Tu edad actual es: " + edad;
+                }
+            }
+
+            console.log(getParameter("contrasena"));
+             var con = getParameter("contrasena");
+             if(con != null){
+             if (con.length < 5) {
+            alert("¡Advertencia! Su contraseña es insegura.");
+             }
+            }
+    </script>
+</body>
+</html>

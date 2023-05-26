@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nombre: </h1><h1 id="Nombre"></h1>
+    <h2>Apellidos: </h2><h2 id="Apellido"></h2>
+    <a href="mailto:Correo" id="Correo">Escribir Correo</a><br>
+    <a href="tel:Telefono" id="Telefono">Llamar</a><br>
+    <h2 id="Fechanac"></h2>
+    <h3></h3>
+
+
+    <script>
+        getParameter = (key) =>{
+        address = window.location.search;
+        parameterList = new URLSearchParams(address);
+        return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+        var nombre = getParameter("nombre");
+        if(nombre != null){ 
+            document.getElementById("Nombre").innerHTML = nombre;
+        }
+        console.log(getParameter("apellido"));
+        var apellido = getParameter("apellido");
+        if(nombre != null){ 
+            document.getElementById("Apellido").innerHTML = apellido;
+        }
+
+        console.log(getParameter("correo"));
+        var correo = getParameter("correo");
+        if(correo != null){ 
+            document.getElementById("Correo").href = "mailto:"+correo;
+        }
+
+        console.log(getParameter("telefono"));
+        var telefono = getParameter("telefono");
+        if(telefono != null){ 
+            document.getElementById("Telefono").href = "tel:"+correo;
+        }
+
+        console.log(getParameter("fechanac"));
+        var FechaDeNacimiento = getParameter("fechanac");
+      if (FechaDeNacimiento != null){
+                var fechaNacimiento = FechaDeNacimiento;
+                var fechaActual = new Date();
+                var fechaNac = new Date(fechaNacimiento);
+                var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+                if (fechaActual.getMonth() < fechaNac.getMonth() || (fechaActual.getMonth() === fechaNac.getMonth() 
+                && fechaActual.getDate() < fechaNac.getDate())) {
+                    edad--;
+                }
+                if (edad <= 99){
+                document.getElementById("Fechanac").innerHTML = "Actualmente tienes " + edad + " años";
+                }
+            }
+
+            console.log(getParameter("contrasena"));
+             var con = getParameter("contrasena");
+             if(con != null){
+             if (con.length < 5) {
+            alert("¡Advertencia! Su contraseña es insegura.");
+             }
+            }
+        </script>
+</body>
+</html>
